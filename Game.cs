@@ -31,6 +31,9 @@ namespace OOP_RPG
             else if (input == "2") {
                 this.Inventory();
             }
+            else if (input == "3") {
+                this.Fight();
+            }
             else {
                 return;
             }
@@ -50,6 +53,10 @@ namespace OOP_RPG
             this.Main();
         }
         
+        public void Fight(){
+            var fight = new Fight(this.hero, this);
+            fight.Start();
+        }
         
 
     }
