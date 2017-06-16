@@ -29,6 +29,7 @@ namespace OOP_RPG
       Console.WriteLine("1. View Stats");
       Console.WriteLine("2. View Inventory");
       Console.WriteLine("3. Fight Monster");
+      Console.WriteLine("4. Visit Shop");
       var input = Console.ReadLine();
       if (input == "1")
       {
@@ -42,6 +43,10 @@ namespace OOP_RPG
       {
         this.Fight();
       }
+      else if (input == "4")
+      {
+        this.shop.Menu();
+      }
       else {
         return;
       }
@@ -49,23 +54,23 @@ namespace OOP_RPG
 
     public void InitializeShop()
     {
-      this.shop = new Shop();
+      this.shop = new Shop(this);
       Weapon weapon1 = new Weapon("Sword", 3, 10, 2);
       Weapon weapon2 = new Weapon("Axe", 4, 12, 3);
       Weapon weapon3 = new Weapon("Longsword", 7, 20, 5);
 
-      shop.Weapons.Add(weapon1);
-      shop.Weapons.Add(weapon2);
-      shop.Weapons.Add(weapon3);
+      shop.Inventory.Add(weapon1);
+      shop.Inventory.Add(weapon2);
+      shop.Inventory.Add(weapon3);
 
       Armor armor1 = new Armor("Wooden Armor", 3, 10, 2);
       Armor armor2 = new Armor("Metal Armor", 7, 20, 5);
 
-      shop.Armor.Add(armor1);
-      shop.Armor.Add(armor2);
+      shop.Inventory.Add(armor1);
+      shop.Inventory.Add(armor2);
 
       Potion potion1 = new Potion("Healing Potion", 5, 15, 5);
-      shop.Potions.Add(potion1);
+      shop.Inventory.Add(potion1);
     }
     public void Stats()
     {
