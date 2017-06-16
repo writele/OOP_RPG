@@ -1,4 +1,4 @@
-Object-Oriented Programming Exercises for C#
+﻿Object-Oriented Programming Exercises for C#
 
 This application is for familiarizing yourself with object-oriented programming and C# through a series of excercises. You will be improving 
 a text-based role-playing game. 
@@ -6,7 +6,7 @@ a text-based role-playing game.
 To get started, clone this repo or download the files. You will be able to interact with this program using the console shell in Visual Studio
 or via the bash command line using mono.
 
-More challenges coming soon!
+To view the completed solution for the following projects, checkout the branch solution-implement-shop.
 
 **** PROJECT: Improve the Initial Application ****
 
@@ -63,9 +63,12 @@ The Potion, Weapon, and Armor classes are missing important properties. Somehow 
 
 Set up your Weapon, Armor, and Potion classes to inherit from the Item interface. For each class, implement the new properties and allow them to be set by the constructor. 
 
+**** PROJECT: Implement Your Shop ****
+** This is currently under construction and is not completely accurate. You can still use the steps below as general guidelines for implementing the shop feature. **
+
 Challenge: Add Items to a List
 
-Let’s stock up our shop. Add the following:
+In the Game class, add a Shop property and a method InitializeShop. In InitializeShop, set the Game's shop to a new Shop and stock up the shop with the following:
 
 Weapons
 
@@ -113,10 +116,6 @@ ShowInventory():
 
 This should loop through each list and display the Name and OriginalValue. A number should correspond with each item. If the user enters an item’s number, call the Sell method. If the user enters “r” or “return”, it should return them to the Menu. These directions should be given to the user so they know what to enter.
 
-Sell(int itemNumber):
-
-This should add the specified item to the hero’s bag. It should subtract the item’s OriginalValue from the hero’s gold.
-Then the user should be returned to Menu.
 
 BuyfromUser():
 
