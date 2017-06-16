@@ -8,7 +8,7 @@ namespace OOP_RPG
 {
   public class Potion : IItem
   {
-    public Potion(int hp, string name, int originalValue, int resellValue)
+    public Potion(string name, int hp, int originalValue, int resellValue)
     {
       this.HP = hp;
       this.Name = name;
