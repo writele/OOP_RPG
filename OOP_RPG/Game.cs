@@ -54,7 +54,7 @@ namespace OOP_RPG
 
     public void InitializeShop()
     {
-      this.shop = new Shop(this);
+      this.shop = new Shop(this.hero, this);
       Weapon weapon1 = new Weapon("Sword", 3, 10, 2);
       Weapon weapon2 = new Weapon("Axe", 4, 12, 3);
       Weapon weapon3 = new Weapon("Longsword", 7, 20, 5);

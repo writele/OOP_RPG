@@ -20,6 +20,9 @@ namespace OOP_RPG
       this.AddMonster("Kraken", 10, 6, 25);
       this.AddMonster("Octoman", 12, 5, 18);
       this.AddMonster("Killer Dolphin", 7, 11, 21);
+      Random randomInt = new Random();
+      int randomMonster = randomInt.Next(this.Monsters.Count - 1);
+      this.monster = this.Monsters[randomMonster];
     }
 
     public void AddMonster(string name, int strength, int defense, int hp)
@@ -34,9 +37,6 @@ namespace OOP_RPG
       //this.monster = this.Monsters[2];
       //this.monster = this.Monsters.Where(x => x.OriginalHP < 20).FirstOrDefault();
       //this.monster = this.Monsters.Where(x => x.Strength >= 12).FirstOrDefault();
-      Random randomInt = new Random();
-      int randomMonster = randomInt.Next(this.Monsters.Count - 1);
-      this.monster = this.Monsters[randomMonster];
 
       Console.WriteLine("You've encountered a " + monster.Name + "! " + monster.Strength + " Strength/" + monster.Defense + " Defense/" +
       this.monster.CurrentHP + " HP. What will you do?");
@@ -44,14 +44,14 @@ namespace OOP_RPG
       var input = Console.ReadLine();
       if (input == "1")
       {
-        this.HeroTurn(this.monster);
+        this.HeroTurn();
       }
       else {
         this.game.Main();
       }
     }
 
-    public void HeroTurn(Monster monster)
+    public void HeroTurn()
     {
       var compare = hero.Strength - monster.Defense;
       int damage;
@@ -69,16 +69,16 @@ namespace OOP_RPG
 
       if (monster.CurrentHP <= 0)
       {
-        this.Win(monster);
+        this.Win();
       }
       else
       {
-        this.MonsterTurn(monster);
+        this.MonsterTurn();
       }
 
     }
 
-    public void MonsterTurn(Monster monster)
+    public void MonsterTurn()
     {
       int damage;
       var compare = monster.Strength - hero.Defense;
@@ -102,7 +102,7 @@ namespace OOP_RPG
       }
     }
 
-    public void Win(Monster monster)
+    public void Win()
     {
       Console.WriteLine(monster.Name + " has been defeated! You win the battle!");
       this.hero.Gold += this.monster.Gold;
