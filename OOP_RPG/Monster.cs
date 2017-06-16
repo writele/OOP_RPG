@@ -12,11 +12,13 @@ namespace OOP_RPG
       this.Defense = defense;
       this.OriginalHP = originalHP;
       this.CurrentHP = currentHP;
+      this.Gold = 5;
     }
     public string Name { get; set; }
     public int Strength { get; set; }
     public int Defense { get; set; }
     public int OriginalHP { get; set; }
     public int CurrentHP { get; set; }
+    public int Gold { get; set; }
   }
 }
